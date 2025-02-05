@@ -16,7 +16,7 @@ const CTAButton = ({ href, children }) => (
 const PhoneNumber = () => (
   <motion.a
     href="tel:01.34.77.20.03"
-    className="flex items-center gap-2 text-xl text-[#2b2a35] font-medium mr-2"
+    className="flex items-center gap-1 text-xl text-[#2b2a35] font-medium"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
   >
@@ -32,7 +32,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50"
     >
-      <div className="container mx-auto px-20 py-3">
+      <div className="container mx-auto px-22 pt-3 pb-4.5">
         <nav className="flex justify-between items-center">
           {/* Logo */}
           <motion.a href="/" whileHover={{ scale: 1.05 }} className="w-20">
@@ -44,7 +44,7 @@ const Header = () => {
           </motion.a>
 
           {/* Right-hand navigation */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-10">
             <PhoneNumber />
             <CTAButton href="https://projet.marketingbox.fr">
               Prendre RDV
