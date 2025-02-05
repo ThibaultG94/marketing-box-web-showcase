@@ -5,7 +5,7 @@ const CTAButton = ({ href, children }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-[#42277e] text-white px-6 py-2 rounded-lg font-semibold transition-all"
+    className="bg-[#42277e] text-white text-lg px-8 py-3 rounded-lg font-semibold transition-all"
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
   >
@@ -16,7 +16,7 @@ const CTAButton = ({ href, children }) => (
 const PhoneNumber = () => (
   <motion.a
     href="tel:01.34.77.20.03"
-    className="flex items-center gap-2 text-xl text-[#2b2a35] font-medium"
+    className="flex items-center gap-2 text-xl text-[#2b2a35] font-medium mr-2"
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
   >
@@ -32,10 +32,10 @@ const Header = () => {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50"
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-20 py-3">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <motion.a href="/" whileHover={{ scale: 1.05 }} className="w-16">
+          <motion.a href="/" whileHover={{ scale: 1.05 }} className="w-20">
             <img
               src="/src/assets/logo.png"
               alt="Marketing Box Logo"
