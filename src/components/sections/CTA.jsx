@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const ActionButton = ({ children, href = "#", className = "" }) => (
   <motion.a
     href={href}
-    className={`inline-block bg-white text-black px-8 py-3 rounded-lg text-xl font-semibold ${className}`}
+    className="inline-block bg-white text-black font-bold px-10 py-3 rounded-lg text-xl mt-8 mb-2"
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
   >
@@ -36,13 +36,13 @@ const CTA = () => {
   return (
     <>
       {/* Partner logos section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-medium text-center mb-16"
+            className="text-2xl font-thin text-gray-800 text-center mb-32 tracking-wider"
           >
             ON ADORE ÊTRE À LEURS CÔTÉS
           </motion.h2>
@@ -60,7 +60,7 @@ const CTA = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-16 w-auto object-contain"
+                  className="w-40 h-auto object-contain"
                 />
               </motion.div>
             ))}
@@ -69,16 +69,16 @@ const CTA = () => {
       </section>
 
       {/* Customer Acquisition section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-21">
+          <div className="grid grid-cols-1 lg:flex gap-20">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={textVariants}
             >
-              <h2 className="text-4xl font-bold mb-12 leading-tight">
+              <h2 className="text-4xl font-bold mb-7 leading-tight">
                 UN CLIENT,
                 <br />
                 UN AUTRE,
@@ -86,12 +86,13 @@ const CTA = () => {
                 ENCORE UN !
               </h2>
 
-              <div className="space-y-8 text-lg">
+              <div className="space-y-8 text-xl/7.5 font-thin tracking-wide max-w-[550px]">
                 <p>
                   Nos experts vous accompagnent et vous génèrent des contacts
                   qualifiés.
+                  <br />
+                  Ne courez plus après vos prospects !
                 </p>
-                <p>Ne courez plus après vos prospects !</p>
                 <p>
                   Boostez les performances de votre équipe commerciale grâce à
                   la technologie.
@@ -109,7 +110,7 @@ const CTA = () => {
               <img
                 src="/src/assets/analyse-performance.png"
                 alt="Analyse de performance commerciale"
-                className="rounded-lg w-full h-full object-cover"
+                className="rounded-lg w-[414px] h-[414px] object-cover"
               />
             </motion.div>
           </div>
@@ -117,16 +118,16 @@ const CTA = () => {
       </section>
 
       {/* IA and Tools section */}
-      <section className="bg-black text-white py-16">
+      <section className="bg-black text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl font-bold max-w-4xl mx-auto mb-8"
+            className="text-xl md:text-2xl/9 font-bold max-w-4xl mx-auto"
           >
-            Mettez les outils, les algorithmes, les robots et l'intelligence
-            artificielle au service de votre performance.
+            Mettez les outils, les algorithmes, les robots et <br />{" "}
+            l'intelligence artificielle au service de votre performance.
           </motion.h3>
 
           <motion.div
@@ -143,20 +144,20 @@ const CTA = () => {
       </section>
 
       {/* Expertise and Tools section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square"
+              className="relative aspect-square items-self-center justify-self-center"
             >
               <img
                 src="/src/assets/equipe-brainstorming.png"
                 alt="Équipe brainstorming"
-                className="rounded-lg w-full h-full object-cover"
+                className="rounded-lg w-[449px] lg:w-[351px] h-auto object-cover"
               />
             </motion.div>
 
@@ -167,7 +168,7 @@ const CTA = () => {
               variants={textVariants}
               className="space-y-6"
             >
-              <h2 className="text-4xl font-bold mb-12">
+              <h2 className="text-4xl font-bold mb-12 leading-tight text-gray-800">
                 DES EXPERTISES.
                 <br />
                 DES OUTILS.
