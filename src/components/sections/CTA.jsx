@@ -146,18 +146,18 @@ const CTA = () => {
       {/* Expertise and Tools section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square items-self-center justify-self-center"
+              className="relative aspect-square place-self-center justify-self-center"
             >
               <img
                 src="/src/assets/equipe-brainstorming.png"
                 alt="Équipe brainstorming"
-                className="rounded-lg w-[449px] lg:w-[351px] h-auto object-cover"
+                className="rounded-lg w-[449px] lg:w-[351px] h-auto"
               />
             </motion.div>
 
@@ -166,9 +166,8 @@ const CTA = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={textVariants}
-              className="space-y-6"
             >
-              <h2 className="text-4xl font-bold mb-12 leading-tight text-gray-800">
+              <h2 className="text-4xl font-bold mb-6 leading-tight text-gray-800">
                 DES EXPERTISES.
                 <br />
                 DES OUTILS.
@@ -176,20 +175,17 @@ const CTA = () => {
                 UN INTERLOCUTEUR UNIQUE !
               </h2>
 
-              <div className="space-y-6 text-gray-600">
-                <p className="text-lg">
-                  Toute une équipe à vos côtés, un interlocuteur unique.
-                </p>
-
-                <p className="text-lg">
+              <div className="space-y-6 text-gray-600 font-thin text-xl/10">
+                <p>
+                  Toute une équipe à vos côtés, un interlocuteur unique. <br />
                   Publicités, réseaux sociaux, applications et sites web, studio
                   créatif, impression de documents, automatisation.
                 </p>
 
-                <div className="flex items-start gap-2 mt-6">
-                  <span className="text-green-600 text-xl">✓</span>
-                  <p className="text-lg">
-                    Une équipe d'experts à votre service, encadrés par un
+                <div className="flex items-start gap-2 mt-10">
+                  <p>
+                    <span className="text-green-600 text-xl mr-3.5">✓</span>
+                    Une équipe d’experts à votre service, encadrés par un
                     consultant unique à vos côtés.
                   </p>
                 </div>
