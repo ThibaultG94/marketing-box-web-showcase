@@ -15,24 +15,23 @@ const ExpertiseCard = ({ icon, title }) => (
   </motion.div>
 );
 
+const WhiteButton = ({ href, children }) => (
+  <motion.a
+    href={href}
+    className="inline-block bg-white text-black font-bold px-8 py-3 rounded-lg text-xl mt-8"
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+  >
+    {children}
+  </motion.a>
+);
+
 const Expertise = () => {
   const expertises = [
-    {
-      icon: "puzzle",
-      title: "CONSEILS ET STRATÉGIE",
-    },
-    {
-      icon: "cursor",
-      title: "CRÉATION SITES WEB & APPLICATIONS",
-    },
-    {
-      icon: "hashtag",
-      title: "RÉSEAUX SOCIAUX ET PUBLICITÉS",
-    },
-    {
-      icon: "rocket",
-      title: "AUTOMATISATION & PRODUCTIVITÉ",
-    },
+    { icon: "puzzle", title: "CONSEILS ET STRATÉGIE" },
+    { icon: "cursor", title: "CRÉATION SITES WEB & APPLICATIONS" },
+    { icon: "hashtag", title: "RÉSEAUX SOCIAUX ET PUBLICITÉS" },
+    { icon: "rocket", title: "AUTOMATISATION & PRODUCTIVITÉ" },
   ];
 
   return (
@@ -59,7 +58,7 @@ const Expertise = () => {
       <section className="bg-black text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <motion.p
-            className="text-2xl font-bold max-w-4xl mx-auto"
+            className="text-2xl font-bold max-w-5xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -69,6 +68,7 @@ const Expertise = () => {
             <br />
             pour vous accompagner vers le succès.
           </motion.p>
+          <WhiteButton href="#contact">Être rappelé</WhiteButton>
         </div>
       </section>
     </>
