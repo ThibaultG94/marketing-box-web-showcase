@@ -32,7 +32,7 @@ const Header = () => {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50"
     >
-      <div className="container mx-auto px-12 lg:px-22 pt-3 pb-4.5">
+      <div className="container mx-auto px-4 xs:px-12 lg:px-22 pt-3 pb-4.5">
         <nav className="flex justify-between items-center">
           {/* Logo */}
           <motion.a href="/" whileHover={{ scale: 1.05 }} className="w-20">
