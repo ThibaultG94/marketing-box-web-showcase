@@ -1,3 +1,4 @@
+import DemoBadge from "./components/common/DemoBadge";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import CTA from "./components/sections/CTA";
@@ -14,6 +15,7 @@ function App() {
         <CTA />
       </main>
       <Footer />
+      <DemoBadge />
     </div>
   );
 }

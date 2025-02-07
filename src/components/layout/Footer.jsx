@@ -41,7 +41,6 @@ const Footer = () => {
     <footer className="bg-black text-white">
       <div className="container mx-auto px-6 lg:px-20 py-16">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-          {/* Logo et copyright */}
           <div className="flex flex-col">
             <motion.a
               href="/"
