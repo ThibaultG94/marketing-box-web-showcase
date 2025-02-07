@@ -18,7 +18,7 @@ const ExpertiseCard = ({ icon, title }) => (
 const WhiteButton = ({ href, children }) => (
   <motion.a
     href={href}
-    className="inline-block bg-white text-black font-bold px-8 py-3 rounded-lg text-xl mt-8"
+    className="inline-block bg-white text-black font-bold px-6 sm:px-8 py-3 rounded-lg text-xl mt-8 w-4/5 sm:w-auto"
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
   >
@@ -47,7 +47,7 @@ const Expertise = () => {
             Nos expertises
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 max-w-5xl mx-auto mb-16">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-16 max-w-5xl mx-auto mb-16">
             {expertises.map((expertise, index) => (
               <ExpertiseCard key={index} {...expertise} />
             ))}
@@ -58,7 +58,7 @@ const Expertise = () => {
       <section className="bg-black text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <motion.p
-            className="text-2xl font-bold max-w-5xl mx-auto"
+            className="text-2xl font-bold max-w-5xl mx-auto leading-9"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
