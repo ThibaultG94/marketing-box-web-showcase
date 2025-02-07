@@ -47,7 +47,7 @@ const CTA = () => {
             ON ADORE ÊTRE À LEURS CÔTÉS
           </motion.h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
             {brandLogos.map((logo, index) => (
               <motion.div
                 key={index}
@@ -70,8 +70,8 @@ const CTA = () => {
 
       {/* Customer Acquisition section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-21">
-          <div className="grid grid-cols-1 lg:flex gap-20">
+        <div className="container mx-auto px-0 md:px-21">
+          <div className="text-center lg:text-left grid grid-cols-1 lg:flex gap-20">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -110,7 +110,7 @@ const CTA = () => {
               <img
                 src="/src/assets/analyse-performance.png"
                 alt="Analyse de performance commerciale"
-                className="rounded-lg w-[414px] h-[414px] object-cover"
+                className="rounded-lg px-4 w-auto lg:w-[414px] h-auto object-cover"
               />
             </motion.div>
           </div>
@@ -124,7 +124,7 @@ const CTA = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl/9 font-bold max-w-4xl mx-auto"
+            className="text-2xl/9 font-bold max-w-4xl mx-auto leading-10"
           >
             Mettez les outils, les algorithmes, les robots et <br />{" "}
             l'intelligence artificielle au service de votre performance.
@@ -145,7 +145,7 @@ const CTA = () => {
 
       {/* Expertise and Tools section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-20">
+        <div className="container mx-auto px-4 xs:px-10 md:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
