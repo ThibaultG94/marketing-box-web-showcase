@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const FooterLink = ({ href, children }) => (
   <motion.a
     href={href}
-    className="text-white/80 hover:text-white transition-colors duration-200"
+    className="text-white hover:text-white/90 transition-colors duration-200"
     whileHover={{ x: 2 }}
     whileTap={{ scale: 0.98 }}
   >
@@ -13,9 +13,9 @@ const FooterLink = ({ href, children }) => (
 );
 
 const FooterColumn = ({ title, links }) => (
-  <div className="space-y-4">
-    <h3 className="text-white font-medium text-lg mb-4">{title}</h3>
-    <div className="flex flex-col space-y-2">
+  <div className="flex flex-col gap-4">
+    <h3 className="text-white font-semibold text-md md:text-lg">{title}</h3>
+    <div className="flex flex-col gap-2">
       {links.map((link, index) => (
         <FooterLink key={index} href={link.href}>
           {link.text}
@@ -26,7 +26,7 @@ const FooterColumn = ({ title, links }) => (
 );
 
 const Footer = () => {
-  const footerSections = {
+  const footerLinks = {
     marketingBox: {
       title: "MarketingBox",
       links: [{ href: "#", text: "Nous contacter" }],
@@ -38,26 +38,29 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white pt-12 pb-21">
-      <div className="container px-10">
-        <div className="flex flex-col md:grid md:grid-cols-2 justify-between items-start">
-          <div className="mb-8 md:mb-0 pl-20">
+    <footer className="bg-black text-white">
+      <div className="container mx-auto px-6 lg:px-20 py-16">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+          {/* Logo et copyright */}
+          <div className="flex flex-col">
             <motion.a
               href="/"
               whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="inline-block"
             >
               <img
                 src="/src/assets/logo-white.png"
                 alt="Marketing Box"
-                className="w-16 h-16 object-contain"
+                className="w-18 h-18 object-contain"
               />
             </motion.a>
-            <p className="text-white/60 mt-4 text-sm">Tous droits réservés.</p>
+            <p className="text-white/60 text-sm mt-4">Tous droits réservés.</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-16">
-            {Object.entries(footerSections).map(([key, section]) => (
+          {/* Navigation */}
+          <div className="grid grid-cols-2 gap-16 lg:gap-24">
+            {Object.entries(footerLinks).map(([key, section]) => (
               <FooterColumn
                 key={key}
                 title={section.title}
