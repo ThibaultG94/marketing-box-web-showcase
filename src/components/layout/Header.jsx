@@ -46,7 +46,7 @@ const Header = () => {
           {/* Right-hand navigation */}
           <div className="hidden md:flex items-center gap-10">
             <PhoneNumber />
-            <CTAButton href="https://projet.marketingbox.fr">
+            <CTAButton href="https://www.thibaultguilhem.com/#contact">
               Prendre RDV
             </CTAButton>
           </div>

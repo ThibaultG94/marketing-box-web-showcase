@@ -43,7 +43,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <ActionButton href="https://projet.marketingbox.fr">
+              <ActionButton href="https://www.thibaultguilhem.com/#contact">
                 J'ai un projet 🤚🏼
               </ActionButton>
             </motion.div>

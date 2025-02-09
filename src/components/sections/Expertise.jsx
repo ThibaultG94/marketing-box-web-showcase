@@ -18,6 +18,7 @@ const ExpertiseCard = ({ icon, title }) => (
 const WhiteButton = ({ href, children }) => (
   <motion.a
     href={href}
+    target="_blank"
     className="inline-block bg-white text-black font-bold px-6 sm:px-8 py-3 rounded-lg text-xl mt-8 w-4/5 sm:w-auto"
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
@@ -68,7 +69,9 @@ const Expertise = () => {
             <br />
             pour vous accompagner vers le succès.
           </motion.p>
-          <WhiteButton href="#contact">Être rappelé</WhiteButton>
+          <WhiteButton href="https://www.thibaultguilhem.com/#contact">
+            Être rappelé
+          </WhiteButton>
         </div>
       </section>
     </>
