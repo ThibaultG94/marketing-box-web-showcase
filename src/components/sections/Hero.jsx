@@ -14,40 +14,85 @@ const ActionButton = ({ href, children }) => (
 );
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.4,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+      },
+    },
+  };
+
+  const backgroundVariants = {
+    hidden: { scale: 1.1, opacity: 0.8 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="relative h-[482px] pt-29">
-      <div
-        className="absolute inset-0 overflow-hidden"
+    <section className="relative h-[482px] pt-29 overflow-hidden">
+      <motion.div
+        variants={backgroundVariants}
+        initial="hidden"
+        animate="visible"
+        className="absolute inset-0"
         style={{
           background:
             'url("/src/assets/hero-bg.webp") center 0% / cover no-repeat',
         }}
-      ></div>
+      />
 
       <div className="relative h-full z-10">
         <div className="container mx-auto px-4 h-full flex items-center justify-center">
-          <div className="text-center max-w-4xl">
+          <motion.div
+            className="text-center max-w-4xl"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.h2
               className="text-3xl md:text-4xl font-extrabold pb-6 sm:pb-10 mb-2 leading-11 md:leading-13"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              variants={itemVariants}
             >
-              Mettez le Digital et la Tech au service
+              <motion.span className="inline-block" variants={itemVariants}>
+                Mettez le Digital et la Tech au service
+              </motion.span>
               <br />
-              de vos équipes et de votre business.
+              <motion.span className="inline-block" variants={itemVariants}>
+                de vos équipes et de votre business.
+              </motion.span>
             </motion.h2>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <ActionButton href="https://www.thibaultguilhem.com/#contact">
                 J'ai un projet 🤚🏼
               </ActionButton>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

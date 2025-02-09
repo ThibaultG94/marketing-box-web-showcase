@@ -28,6 +28,51 @@ const WhiteButton = ({ href, children }) => (
 );
 
 const Expertise = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: {
+      opacity: 0,
+      y: -30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+  };
+
   const expertises = [
     { icon: "puzzle", title: "CONSEILS ET STRATÉGIE" },
     { icon: "cursor", title: "CRÉATION SITES WEB & APPLICATIONS" },
@@ -41,37 +86,38 @@ const Expertise = () => {
         <div className="container mx-auto px-4">
           <motion.h2
             className="text-4xl font-bold text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={titleVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
           >
             Nos expertises
           </motion.h2>
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-16 max-w-5xl mx-auto mb-16">
-            {expertises.map((expertise, index) => (
-              <ExpertiseCard key={index} {...expertise} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-black text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <motion.p
-            className="text-2xl font-bold max-w-5xl mx-auto leading-9"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          <motion.div
+            className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-16 max-w-5xl mx-auto mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
           >
-            Notre équipe Tech et Créative imagine et déploie les meilleures
-            stratégies
-            <br />
-            pour vous accompagner vers le succès.
-          </motion.p>
-          <WhiteButton href="https://www.thibaultguilhem.com/#contact">
-            Être rappelé
-          </WhiteButton>
+            {expertises.map((expertise, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover={{
+                  scale: 1.05,
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                  },
+                }}
+              >
+                <ExpertiseCard {...expertise} />
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </>

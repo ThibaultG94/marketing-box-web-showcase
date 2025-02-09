@@ -26,10 +26,40 @@ const PhoneNumber = () => (
 );
 
 const Header = () => {
+  const headerVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 1,
+        duration: 0.8,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 20,
+      },
+    },
+  };
+
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      variants={headerVariants}
+      initial="hidden"
+      animate="visible"
       className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50"
     >
       <div className="container mx-auto px-4 xs:px-12 lg:px-22 pt-3 pb-4.5">
