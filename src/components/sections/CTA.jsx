@@ -47,23 +47,65 @@ const CTA = () => {
             ON ADORE ÊTRE À LEURS CÔTÉS
           </motion.h2>
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-5xl mx-auto">
-            {brandLogos.map((logo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="flex justify-center"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="w-40 h-auto object-contain"
-                />
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-14 items-center max-w-5xl mx-auto">
+            {/* Leclerc */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
+              <img
+                src="/src/assets/leclerc-logo.png"
+                alt="Leclerc"
+                className="w-40 h-auto object-contain"
+              />
+            </motion.div>
+
+            {/* La Serre aux Papillons */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex justify-center"
+            >
+              <img
+                src="/src/assets/serre-papillons-logo.png"
+                alt="La Serre aux Papillons"
+                className="w-96 h-auto object-contain"
+              />
+            </motion.div>
+
+            {/* Jomo */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex justify-center"
+            >
+              <img
+                src="/src/assets/jomo-logo.png"
+                alt="Jomo"
+                className="w-40 h-auto object-contain"
+              />
+            </motion.div>
+
+            {/* Burger King */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="flex justify-center"
+            >
+              <img
+                src="/src/assets/burger-king-logo.png"
+                alt="Burger King"
+                className="w-34 h-auto object-contain"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
