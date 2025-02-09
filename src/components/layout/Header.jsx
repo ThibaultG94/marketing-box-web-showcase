@@ -6,7 +6,10 @@ const CTAButton = ({ href, children }) => (
     target="_blank"
     rel="noopener noreferrer"
     className="bg-[#42277e] text-white text-md px-6 py-2.5 lg:text-lg lg:px-8 lg:py-3 rounded-lg font-semibold transition-all"
-    whileHover={{ scale: 1.02 }}
+    whileHover={{
+      scale: 1.02,
+      transition: { type: "spring", stiffness: 400 },
+    }}
     whileTap={{ scale: 0.98 }}
   >
     {children}
@@ -15,9 +18,12 @@ const CTAButton = ({ href, children }) => (
 
 const PhoneNumber = () => (
   <motion.a
-    href="tel:01.34.77.20.03"
+    href="tel:01.23.45.67.89"
     className="flex items-center gap-1 text-lg lg:text-xl text-[#2b2a35] font-medium"
-    whileHover={{ scale: 1.05 }}
+    whileHover={{
+      scale: 1.05,
+      transition: { type: "spring", stiffness: 400 },
+    }}
     whileTap={{ scale: 0.95 }}
   >
     <span className="hidden sm:inline">📲</span>
@@ -27,7 +33,10 @@ const PhoneNumber = () => (
 
 const Header = () => {
   const headerVariants = {
-    hidden: { y: -100, opacity: 0 },
+    hidden: {
+      y: -100,
+      opacity: 0,
+    },
     visible: {
       y: 0,
       opacity: 1,
@@ -43,7 +52,10 @@ const Header = () => {
   };
 
   const childVariants = {
-    hidden: { y: -20, opacity: 0 },
+    hidden: {
+      y: -20,
+      opacity: 0,
+    },
     visible: {
       y: 0,
       opacity: 1,
@@ -65,7 +77,15 @@ const Header = () => {
       <div className="container mx-auto px-4 xs:px-12 lg:px-22 pt-3 pb-4.5">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <motion.a href="/" whileHover={{ scale: 1.05 }} className="w-20">
+          <motion.a
+            href="/"
+            variants={childVariants}
+            whileHover={{
+              scale: 1.05,
+              transition: { type: "spring", stiffness: 400 },
+            }}
+            className="w-20"
+          >
             <img
               src="/src/assets/logo.png"
               alt="Marketing Box Logo"
@@ -74,12 +94,19 @@ const Header = () => {
           </motion.a>
 
           {/* Right-hand navigation */}
-          <div className="hidden md:flex items-center gap-10">
-            <PhoneNumber />
-            <CTAButton href="https://www.thibaultguilhem.com/#contact">
-              Prendre RDV
-            </CTAButton>
-          </div>
+          <motion.div
+            variants={childVariants}
+            className="hidden md:flex items-center gap-10"
+          >
+            <motion.div variants={childVariants}>
+              <PhoneNumber />
+            </motion.div>
+            <motion.div variants={childVariants}>
+              <CTAButton href="https://www.thibaultguilhem.com/#contact">
+                Prendre RDV
+              </CTAButton>
+            </motion.div>
+          </motion.div>
         </nav>
       </div>
     </motion.header>
